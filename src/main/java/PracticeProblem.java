@@ -1,27 +1,22 @@
 public class PracticeProblem {
 
-	public static void main(String args[]) {
+    public static int towerOfHanoi(int num) {
+        if (num < 3) {
+            return -1;
+        }
+        return calculateMoves(num);
+    }
 
-	}
+    private static int calculateMoves(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        return 2 * calculateMoves(n - 1) + 1;
+    }
 
-	public static void q1() {
-		//Write question 1 code here
-	}
-
-	public static void q2() {
-		//Write question 2 code here
-	}
-
-	public static void q3() {
-		//Write question 3 code here
-	}
-
-	public static void q4() {
-		//Write question 4 code here
-	}
-
-	public static void q5() {
-		//Write question 5 code here
-	}
-
+    public static void main(String[] args) {
+        System.out.println(towerOfHanoi(3));
+        System.out.println(towerOfHanoi(4));
+        
+    }
 }
